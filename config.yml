@@ -1,0 +1,21 @@
+title: Learn you some Reason
+tagline: Learn how to write some Reason code
+description: Longer explanation of the same; Reason Reason Reason Reason
+template:
+  name: learn-you-some-reason
+  repo: lab-learn-you-some-reason-template
+  
+steps:
+- title: Create a package.json
+  description: Initialize your project by creating a package.json
+  event: push
+  actions:
+  - type: gate
+    left: '%payload.ref%'
+    operator: ===
+    right: 'refs/heads/master'
+    else:
+    - type: respond
+      with: not-master.md
+  - type: respond
+    with: you-succeeded.md
