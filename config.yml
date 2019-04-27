@@ -22,6 +22,17 @@ steps:
     - type: respond
       with: not-master.md
       issue: 1
+  - type: getFileContents
+    action_id: packageJsonContents
+    filename: 'package.json'
+  - type: gate
+    left: '/"version": ".*",?/gm'
+    operator: test
+    right: '%actions.packageJsonContents%'
+    else:
+    - type: respond
+      with: no-version.md
+      issue: 1
   - type: respond
     with: you-succeeded.md
     issue: 1
