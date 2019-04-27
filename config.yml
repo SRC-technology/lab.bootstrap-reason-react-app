@@ -4,6 +4,10 @@ description: Longer explanation of the same; Reason Reason Reason Reason
 template:
   name: learn-you-some-reason
   repo: lab-learn-you-some-reason-template
+before:
+  - type: createIssue
+    title: Welcome
+    body: 000-welcome.md
 
 steps:
 - title: Create a package.json
@@ -17,5 +21,7 @@ steps:
     else:
     - type: respond
       with: not-master.md
+      issue: 1
   - type: respond
     with: you-succeeded.md
+    issue: 1
