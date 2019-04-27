@@ -27,7 +27,5 @@ steps:
     else:
     - type: respond
       with: no-version.md
-      issue: '%actions.first_pr_id.data.number%'
   - type: respond
     with: you-succeeded.md
-    issue: '%actions.first_pr_id.data.number%'
