@@ -8,7 +8,10 @@ the brave) you can close it at any point for a hands-off experience.
 
 In this course we will cover: 
 
+Go to [the code sandbox to edit this branch]({{ url }})
+
 1. Setting up your first Reason project
 2. Creating a React application
 3. Publishing your web-app on Github Pages
 4. ?
+
