@@ -9,6 +9,8 @@ before:
     title: Welcome
     body: 000-welcome.md
     head: update-version
+    data:
+      url: 'https://codesandbox.io/s/github/ostera/learn-you-some-reason/tree/update-version'
     action_id: first_pr_id
 
 steps:
