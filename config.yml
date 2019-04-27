@@ -16,7 +16,7 @@ before:
 steps:
 - title: Create a package.json
   description: Initialize your project by creating a package.json
-  event: pull_request.synchronize
+  event: pull_request
   link: '{{ repoUrl }}/pull/1'
   actions:
   - type: getFileContents
