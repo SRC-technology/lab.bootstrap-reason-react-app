@@ -8,7 +8,7 @@ before:
   - type: createPullRequest
     title: Welcome
     body: 000-welcome.md
-    head: package-json
+    head: update-version
     action_id: first_pr_id
 
 steps:
