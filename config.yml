@@ -4,7 +4,7 @@ description: Longer explanation of the same; Reason Reason Reason Reason
 template:
   name: learn-you-some-reason
   repo: lab-learn-you-some-reason-template
-  
+
 steps:
 - title: Create a package.json
   description: Initialize your project by creating a package.json
