@@ -31,3 +31,9 @@
 ### 2.3 Mark a Task as Done
 
 - [ ] Hook up Done button to the State
+
+## 3. See you soon!
+
+- [ ] point to resources for learning: official docs, unofficial guides
+- [ ] point to community points: discord, forum
+- [ ] point to subscribe page on SRC
