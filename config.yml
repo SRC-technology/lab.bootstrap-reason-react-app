@@ -1,9 +1,9 @@
-title: Learn You Some Reason
-tagline: Learn how to write some Reason for Great Good
+title: Intro to Reason
+tagline: Get Started with ReasonML
 description: Longer explanation of the same; Reason Reason Reason Reason
 template:
-  name: learn-you-some-reason
-  repo: lab-learn-you-some-reason-template
+  name: reason-todo-app
+  repo: lab.template-intro-to-reason
 before:
   - type: createPullRequest
     title: Welcome
