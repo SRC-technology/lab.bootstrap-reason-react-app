@@ -15,8 +15,9 @@ before:
     method: repos.enablePagesSite
     owner: '%payload.repository.owner.login%'
     repo: '%payload.repository.name%'
-    source[branch]: 'master'
-    source[path]: '/'
+    source:
+    - branch: 'master'
+    - path: '/'
 
 steps:
 - title: Welcome
@@ -40,7 +41,7 @@ steps:
   - type: assignRegistrant
     issue: '%actions.setup_pr.data.number%'
   - type: respond
-    with: 00.03.md
+    with: 00.03-goto-first-pr.md
     data:
       url: '%actions.setup_pr.data.html_url%'
       
