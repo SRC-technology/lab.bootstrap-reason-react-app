@@ -13,6 +13,7 @@ before:
       - 00.02-begin-here.md
 
 steps:
+
 - title: Welcome
   description: Confirm that the course should begin.
   event: issues
