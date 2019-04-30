@@ -89,5 +89,3 @@ steps:
     with: 01.04-github-pages.md
     data:
       next_pr: '%actions.app_pr.data.html_url%'
-      username: '%payload.repository.owner.login%'
-      repo: '%payload.repository.name%'
