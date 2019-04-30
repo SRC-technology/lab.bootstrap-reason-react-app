@@ -11,13 +11,6 @@ before:
     comments:
       - 00.01-what-we-are-building.md
       - 00.02-begin-here.md
-  - type: octokit
-    method: repos.enablePagesSite
-    owner: '%payload.repository.owner.login%'
-    repo: '%payload.repository.name%'
-    source:
-    - branch: 'master'
-    - path: '/'
 
 steps:
 - title: Welcome
