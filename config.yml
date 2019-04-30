@@ -19,10 +19,6 @@ steps:
   link: '{{ repoUrl }}/issues/1'
   actions:
   - type: gate
-    left: '%payload.issue.title%'
-    operator: ===
-    right: Welcome
-  - type: gate
     left: '%payload.action%'
     operator: ===
     right: closed
