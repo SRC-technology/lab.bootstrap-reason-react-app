@@ -33,8 +33,7 @@ steps:
     with: 00.03-goto-first-pr.md
     data:
       url: '%actions.setup_pr.data.html_url%'
-      
-      
+
 - title: 'Local Setup: Install Dependencies'
   description: Get the repo up and working in your computer
   event: pull_request.synchronize
@@ -59,7 +58,7 @@ steps:
     path: /\.bs\.js/
   - type: respond
     with: 01.02-build-project.md
-    
+
 - title: 'Local Setup: Build Project'
   description: Create project bundle
   event: pull_request.synchronize
@@ -69,7 +68,7 @@ steps:
     path: /bundle\/index.js$/
   - type: respond
     with: 01.03-check-app-local.md
-    
+
 - title: 'Local Setup: Check App Works'
   description: Create project bundle
   event: issue_comment
