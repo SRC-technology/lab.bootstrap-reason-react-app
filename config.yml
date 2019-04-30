@@ -3,7 +3,7 @@ tagline: Learn You Some Reason for Great Good by building your first Reason Reac
 description: Longer explanation of the same; Reason Reason Reason Reason
 template:
   name: reason-todo-app
-  repo: lab.template-intro-to-reason
+  repo: lab-template.intro-to-reason
 before:
   - type: createIssue
     title: Welcome
