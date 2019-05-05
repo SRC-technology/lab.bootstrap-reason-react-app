@@ -116,9 +116,16 @@ steps:
     pullRequest: Getting Started
   - type: deleteBranch
     branch: setup
+  - type: createIssue
+    title: This is just the Beginning!
+    body: 02.00-end.md
 
 - title: 'Fin: Wrapping it up!'
   description: Additional links
+  event: issues
+  link: '{{ repoUrl }}/issues/3'
   actions:
-  - type: respond
-    with: 02.00-end.md
+  - type: gate
+    left: '%payload.action%'
+    operator: ===
+    right: closed
