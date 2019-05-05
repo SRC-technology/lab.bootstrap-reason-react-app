@@ -54,6 +54,10 @@ steps:
   description: Install VS Code
   event: pull_request.synchronize
   link: '%actions.setup_pr.data.html_url%'
+  actions:
+  - type: getFileContents
+    path: "./lib/js/src/Index.bs.js"
+    action_id: index_bs_js
 
     # - title: 'Local Setup: Build Project'
     #   description: Create project bundle
