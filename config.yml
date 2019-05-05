@@ -90,9 +90,6 @@ steps:
     left: '%payload.review.state%'
     operator: ===
     right: approved
-  - type: mergePullRequest
-  - type: deleteBranch
-    branch: setup
   - type: createPullRequest
     title: Creating the ToDo App
     body: 02.00-show-tasks.md
@@ -102,3 +99,7 @@ steps:
     with: 01.04-github-pages.md
     data:
       next_pr: '%actions.app_pr.data.html_url%'
+  - type: mergePullRequest
+    pullRequest: '%actions.setup_pr.data.number%'
+  - type: deleteBranch
+    branch: setup
