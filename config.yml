@@ -79,6 +79,7 @@ steps:
     right: '%actions.bundle_index_js%'
   - type: respond
     with: 01.03-check-app-local.md
+  - type: requestReviewFromRegistrant
 
 - title: 'Local Setup: Check App Works'
   description: Create project bundle
@@ -89,7 +90,6 @@ steps:
     left: '%payload.review.state%'
     operator: ===
     right: approved
-  - type: mergePullRequest
   - type: createPullRequest
     title: Creating the ToDo App
     body: 02.00-show-tasks.md
@@ -99,3 +99,4 @@ steps:
     with: 01.04-github-pages.md
     data:
       next_pr: '%actions.app_pr.data.html_url%'
+  - type: mergePullRequest
