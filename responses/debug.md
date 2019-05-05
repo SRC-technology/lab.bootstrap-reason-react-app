@@ -1,5 +1,0 @@
-# DEBUGGING
-
-```
-{{data}}
-```

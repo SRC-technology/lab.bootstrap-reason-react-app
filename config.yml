@@ -19,7 +19,7 @@ before:
 steps:
 
 - title: Welcome
-  description: Confirm that the course should begin.
+  description: Get the course started!
   event: issues
   link: '{{ repoUrl }}/issues/1'
   actions:
@@ -82,8 +82,22 @@ steps:
     operator: test
     right: '%actions.bundle_index_js%'
   - type: respond
-    with: 01.03-check-app-local.md
-  - type: requestReviewFromRegistrant
+    with: 01.03-run-tests.md
+
+- title: 'Local Setup: Test Project'
+  description: Run the tests in the project.
+  event: pull_request.synchronize
+  link: '%actions.setup_pr.data.html_url%'
+  actions:
+  - type: getFileContents
+    filename: __tests__/model_test.re
+    action_id: model_test_re
+  - type: gate
+    left: '/toBe\(true\)/gm'
+    operator: test
+    right: '%actions.model_test_re%'
+  - type: respond
+    with: 01.05-check-app-local.md
 
 - title: 'Local Setup: Check App Works'
   description: Create project bundle
@@ -95,7 +109,7 @@ steps:
     operator: ===
     right: approved
   - type: respond
-    with: 01.04-github-pages.md
+    with: 01.06-github-pages.md
     data:
       next_pr: '%actions.app_pr.data.html_url%'
   - type: mergePullRequest
