@@ -10,4 +10,4 @@ By the end of this course you will have:
 
 🚀 A published ReasonReact ToDo application
 
-![](assets/reason-todo-app.png)
+![](https://raw.githubusercontent.com/SRC-technology/lab.intro-to-reason-web-2/master/assets/reason-todo-app.png)
