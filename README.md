@@ -10,8 +10,4 @@ By the end of this course you will have:
 
 🚀 A published ReasonReact ToDo application
 
-<div style="text-align: center">
-  <img
-    src="assets/reason-todo-app.png"
-     />
-</div>
+![](assets/reason-todo-app.png)
