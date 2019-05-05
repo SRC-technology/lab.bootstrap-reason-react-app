@@ -101,6 +101,60 @@ steps:
     body: 02.00-show-tasks.md
     head: todo-app
     action_id: app_pr
+  - type: octokit
+    method: pullRequests.createComment
+    owner: '%actions.app_pr.data.head.repo.owner.login%'
+    repo: '%actions.app_pr.data.head.repo.name%'
+    number: '%actions.app_pr.data.number%'
+    commit_id: '%actions.app_pr.data.head.sha%'
+    path: src/component.re
+    body: |
+      It seems we are using a single hardcoded task...
+    position: 37
+  - type: octokit
+    method: pullRequests.createComment
+    owner: '%actions.app_pr.data.head.repo.owner.login%'
+    repo: '%actions.app_pr.data.head.repo.name%'
+    number: '%actions.app_pr.data.number%'
+    commit_id: '%actions.app_pr.data.head.sha%'
+    path: src/model.re
+    body: |
+      ...but in our initial state we have multiple tasks... 🤔
+
+      perhaps we should modify our component to not use a hardcoded task and instead use the ones that are in the state.
+    position: 63
+  - type: octokit
+    method: pullRequests.createComment
+    owner: '%actions.app_pr.data.head.repo.owner.login%'
+    repo: '%actions.app_pr.data.head.repo.name%'
+    number: '%actions.app_pr.data.number%'
+    commit_id: '%actions.app_pr.data.head.sha%'
+    path: src/component.re
+    body: |
+      Here's an example of how we could fix this. You will notice that there's a few steps involved.
+
+      ```suggestion
+      <ul>
+        Model.State.(
+          state.tasks
+          |> List.map(task => <Task task />)
+          |> Array.of_list
+          |> React.array
+        )
+      </ul>
+      ```
+
+      Let's walk through this.
+
+      We begin by accessing the tasks in the state with:
+
+      ```reason
+      Model.State.(
+        state.tasks
+      )
+      ```
+
+    position: 37
   - type: respond
     with: 01.04-github-pages.md
     data:
@@ -109,3 +163,6 @@ steps:
     pullRequest: Getting Started
   - type: deleteBranch
     branch: setup
+
+    # - title: 'ToDo App: Listing Tasks'
+    #   description: In this step we will start working on our ToDo application and make it list our tasks.
