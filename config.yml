@@ -70,7 +70,7 @@ steps:
   event: pull_request.synchronize
   link: '%actions.setup_pr.data.html_url%'
   actions:
-- type: getFileContents
+  - type: getFileContents
     path: "./bundle/index.js"
     action_id: bundle_index_js
   - type: gate
