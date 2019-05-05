@@ -1,13 +1,13 @@
-title: Intro to Reason for Web
-tagline: Learn You Some Reason for Great Good by building your first Reason React App!
+title: Bootstrap Reason React App
+tagline: From Zero to Release in a blink 🚀
 description:
-  Hello and welcome to Reason :)
+  Hello and welcome!
 
-  In this course we will cover the basic setup needed to write a small To-do
-  application, all the way from cloning it to publishing to Github Pages.
+  In this lab we will cover the basic setup needed to build Reason React
+  applications, covering testing, documenting them, building, and releasing them!
 template:
-  name: reason-todo-app
-  repo: lab-template.intro-to-reason
+  name: my-reason-react-app
+  repo: lab-template.bootstrap-reason-react-app
 before:
   - type: createIssue
     title: Welcome
@@ -94,21 +94,6 @@ steps:
     left: '%payload.review.state%'
     operator: ===
     right: approved
-  - type: createPullRequest
-    title: Creating the ToDo App
-    body: 02.00-show-tasks.md
-    head: todo-app
-    action_id: app_pr
-  - type: octokit
-    method: pullRequests.createComment
-    owner: '%actions.app_pr.data.head.repo.owner.login%'
-    repo: '%actions.app_pr.data.head.repo.name%'
-    number: '%actions.app_pr.data.number%'
-    commit_id: '%actions.app_pr.data.head.sha%'
-    path: src/components.re
-    body: |
-      It seems we are using a single hardcoded task...
-    position: 37
   - type: respond
     with: 01.04-github-pages.md
     data:
@@ -117,6 +102,3 @@ steps:
     pullRequest: Getting Started
   - type: deleteBranch
     branch: setup
-
-    # - title: 'ToDo App: Listing Tasks'
-    #   description: In this step we will start working on our ToDo application and make it list our tasks.
