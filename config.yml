@@ -1,6 +1,10 @@
-title: Intro to Reason Web 2
+title: Intro to Reason Web
 tagline: Learn You Some Reason for Great Good by building your first Reason React App!
-description: Longer explanation of the same; Reason Reason Reason Reason
+description:
+  Hello and welcome to Reason :)
+
+  In this course we will cover the basic setup needed to write a small To-do
+  application, all the way from cloning it to publishing to Github Pages.
 template:
   name: reason-todo-app
   repo: lab-template.intro-to-reason
