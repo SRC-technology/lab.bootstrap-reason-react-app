@@ -116,3 +116,5 @@ steps:
     pullRequest: Getting Started
   - type: deleteBranch
     branch: setup
+  - type: respond
+    with: 02.00-end.md
