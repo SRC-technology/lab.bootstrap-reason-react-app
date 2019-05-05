@@ -19,10 +19,10 @@ steps:
   event: issues
   link: '{{ repoUrl }}/issues/1'
   actions:
-  - type: gate
-    left: '%payload.action%'
-    operator: ===
-    right: closed
+#  - type: gate
+#    left: '%payload.action%'
+#    operator: ===
+#    right: closed
   - type: createPullRequest
     title: Getting Started
     body: 01.00-setup.md
