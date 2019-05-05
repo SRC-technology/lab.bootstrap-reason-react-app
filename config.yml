@@ -116,5 +116,9 @@ steps:
     pullRequest: Getting Started
   - type: deleteBranch
     branch: setup
+
+- title: 'Fin: Wrapping it up!'
+  description: Additional links
+  actions:
   - type: respond
     with: 02.00-end.md
