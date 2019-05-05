@@ -9,3 +9,9 @@ By the end of this course you will have:
 🛠 An Editor, set up to work with Reason
 
 🚀 A published ReasonReact ToDo application
+
+<div style="text-align: center">
+  <img
+    src="assets/reason-todo-app.png"
+     />
+</div>
