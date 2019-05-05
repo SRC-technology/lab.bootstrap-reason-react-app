@@ -75,7 +75,7 @@ steps:
   link: '%actions.setup_pr.data.html_url%'
   actions:
   - type: getFileContents
-    filename: ./bundle/index.js
+    filename: bundle/index.js
     action_id: bundle_index_js
   - type: gate
     left: '/fastpack/gm'
