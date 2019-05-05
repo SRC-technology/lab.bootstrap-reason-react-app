@@ -83,8 +83,6 @@ steps:
     right: '%actions.bundle_index_js%'
   - type: respond
     with: 01.03-check-app-local.md
-    data:
-      files_url: '%actions.setup_pr.data.html_url%/files'
   - type: requestReviewFromRegistrant
 
 - title: 'Local Setup: Check App Works'
