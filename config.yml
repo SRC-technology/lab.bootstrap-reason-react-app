@@ -1,6 +1,10 @@
 title: Bootstrap Reason React App
 tagline: From Zero to Release in a blink 🚀
-tags: reason bucklescript reason-react react
+tags:
+  - reason
+  - bucklescript
+  - reason-react
+  - react
 description:
   Hello and welcome!
 
