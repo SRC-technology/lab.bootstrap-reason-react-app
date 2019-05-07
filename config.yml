@@ -37,6 +37,11 @@ steps:
     body: 01.00-setup.md
     head: setup
     action_id: setup_pr
+  - type: respond
+    issue: '%actions.setup_pr.data.number%'
+    with: 01.00-setup.activities.md
+    data:
+      repo_ssh_url: '%actions.setup_pr.data.ssh_url%'
   - type: assignRegistrant
     issue: '%actions.setup_pr.data.number%'
   - type: respond
