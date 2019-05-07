@@ -40,8 +40,6 @@ steps:
   - type: respond
     issue: '%actions.setup_pr.data.number%'
     with: 01.00-setup.activities.md
-    data:
-      repo_clone_url: 'git@github.com:{{ user.username }}/{{ repo.name }}'
   - type: assignRegistrant
     issue: '%actions.setup_pr.data.number%'
   - type: respond
