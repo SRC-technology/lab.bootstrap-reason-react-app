@@ -118,22 +118,23 @@ steps:
     left: '%payload.review.state%'
     operator: ===
     right: approved
+  - type: createIssue
+    title: This is just the Beginning!
+    body: 02.00-end.md
+    action_id: final_issue
   - type: respond
     with: 01.06-github-pages.md
     data:
-      next_pr: '%actions.app_pr.data.html_url%'
+      final_issue: '%actions.final_issue.data.html_url%'
   - type: mergePullRequest
     pullRequest: Getting Started
   - type: deleteBranch
     branch: setup
-  - type: createIssue
-    title: This is just the Beginning!
-    body: 02.00-end.md
 
 - title: 'Fin: Wrapping it up!'
   description: Additional links
   event: issues
-  link: '{{ repoUrl }}/issues/3'
+  link: '%actions.final_issue.data.html_url%'
   actions:
   - type: gate
     left: '%payload.action%'
