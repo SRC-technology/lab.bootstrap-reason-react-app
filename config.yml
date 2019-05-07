@@ -49,7 +49,7 @@ steps:
     data:
       url: '%actions.setup_pr.data.html_url%'
 
-- title: 'Local Setup: Install Dependencies'
+- title: 'Install Dependencies'
   description: Get the repo up and working in your computer
   event: pull_request.synchronize
   link: '%actions.setup_pr.data.html_url%'
@@ -64,7 +64,7 @@ steps:
   - type: respond
     with: 01.01-install-vs-code.md
 
-- title: 'Local Setup: VS Code'
+- title: 'Setting up an Editor'
   description: Install VS Code
   event: pull_request.synchronize
   link: '%actions.setup_pr.data.html_url%'
@@ -79,7 +79,7 @@ steps:
   - type: respond
     with: 01.02-build-project.md
 
-- title: 'Local Setup: Build Project'
+- title: 'Building the Project'
   description: Create project bundle
   event: pull_request.synchronize
   link: '%actions.setup_pr.data.html_url%'
@@ -94,7 +94,7 @@ steps:
   - type: respond
     with: 01.03-run-tests.md
 
-- title: 'Local Setup: Test Project'
+- title: 'Testing the Project'
   description: Run the tests in the project.
   event: pull_request.synchronize
   link: '%actions.setup_pr.data.html_url%'
@@ -109,7 +109,7 @@ steps:
   - type: respond
     with: 01.05-check-app-local.md
 
-- title: 'Local Setup: Check App Works'
+- title: 'Verifying the App Works'
   description: Create project bundle
   event: pull_request_review.submitted
   link: '%actions.setup_pr.data.html_url%'
