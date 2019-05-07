@@ -37,6 +37,11 @@ steps:
     body: 01.00-setup.md
     head: setup
     action_id: setup_pr
+  - type: respond
+    issue: '%actions.setup_pr.data.number%'
+    with: 01.00-setup.activities.md
+    data:
+      repo_ssh_url: '%actions.setup_pr.data.ssh_url%'
   - type: assignRegistrant
     issue: '%actions.setup_pr.data.number%'
   - type: respond
@@ -44,7 +49,7 @@ steps:
     data:
       url: '%actions.setup_pr.data.html_url%'
 
-- title: 'Local Setup: Install Dependencies'
+- title: 'Install Dependencies'
   description: Get the repo up and working in your computer
   event: pull_request.synchronize
   link: '%actions.setup_pr.data.html_url%'
@@ -59,7 +64,7 @@ steps:
   - type: respond
     with: 01.01-install-vs-code.md
 
-- title: 'Local Setup: VS Code'
+- title: 'Setting up an Editor'
   description: Install VS Code
   event: pull_request.synchronize
   link: '%actions.setup_pr.data.html_url%'
@@ -74,7 +79,7 @@ steps:
   - type: respond
     with: 01.02-build-project.md
 
-- title: 'Local Setup: Build Project'
+- title: 'Building the Project'
   description: Create project bundle
   event: pull_request.synchronize
   link: '%actions.setup_pr.data.html_url%'
@@ -89,7 +94,7 @@ steps:
   - type: respond
     with: 01.03-run-tests.md
 
-- title: 'Local Setup: Test Project'
+- title: 'Testing the Project'
   description: Run the tests in the project.
   event: pull_request.synchronize
   link: '%actions.setup_pr.data.html_url%'
@@ -104,7 +109,7 @@ steps:
   - type: respond
     with: 01.05-check-app-local.md
 
-- title: 'Local Setup: Check App Works'
+- title: 'Verifying the App Works'
   description: Create project bundle
   event: pull_request_review.submitted
   link: '%actions.setup_pr.data.html_url%'
@@ -113,22 +118,23 @@ steps:
     left: '%payload.review.state%'
     operator: ===
     right: approved
+  - type: createIssue
+    title: This is just the Beginning!
+    body: 02.00-end.md
+    action_id: final_issue
   - type: respond
     with: 01.06-github-pages.md
     data:
-      next_pr: '%actions.app_pr.data.html_url%'
+      final_issue: '%actions.final_issue.data.html_url%'
   - type: mergePullRequest
     pullRequest: Getting Started
   - type: deleteBranch
     branch: setup
-  - type: createIssue
-    title: This is just the Beginning!
-    body: 02.00-end.md
 
 - title: 'Fin: Wrapping it up!'
   description: Additional links
   event: issues
-  link: '{{ repoUrl }}/issues/3'
+  link: '%actions.final_issue.data.html_url%'
   actions:
   - type: gate
     left: '%payload.action%'
