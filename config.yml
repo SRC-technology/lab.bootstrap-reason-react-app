@@ -50,7 +50,7 @@ steps:
 - title: 'Install Dependencies'
   description: Get the repo up and working in your computer
   event: pull_request.synchronize
-  link: '%actions.setup_pr.data.html_url%'
+  link: '{{ repoUrl }}/pull/2'
   actions:
   - type: getFileContents
     action_id: fileContents
@@ -65,7 +65,7 @@ steps:
 - title: 'Setting up an Editor'
   description: Install VS Code
   event: pull_request.synchronize
-  link: '%actions.setup_pr.data.html_url%'
+  link: '{{ repoUrl }}/pull/2'
   actions:
   - type: getFileContents
     action_id: fileContents
@@ -80,7 +80,7 @@ steps:
 - title: 'Building the Project'
   description: Create project bundle
   event: pull_request.synchronize
-  link: '%actions.setup_pr.data.html_url%'
+  link: '{{ repoUrl }}/pull/2'
   actions:
   - type: getFileContents
     filename: bundle/index.js
@@ -95,7 +95,7 @@ steps:
 - title: 'Testing the Project'
   description: Run the tests in the project.
   event: pull_request.synchronize
-  link: '%actions.setup_pr.data.html_url%'
+  link: '{{ repoUrl }}/pull/2'
   actions:
   - type: getFileContents
     filename: __tests__/model_test.re
@@ -110,7 +110,7 @@ steps:
 - title: 'Verifying the App Works'
   description: Create project bundle
   event: pull_request_review.submitted
-  link: '%actions.setup_pr.data.html_url%'
+  link: '{{ repoUrl }}/pull/2'
   actions:
   - type: gate
     left: '%payload.review.state%'
@@ -132,7 +132,7 @@ steps:
 - title: 'Fin: Wrapping it up!'
   description: Additional links
   event: issues
-  link: '%actions.final_issue.data.html_url%'
+  link: '{{ repoUrl }}/issues/3'
   actions:
   - type: gate
     left: '%payload.action%'
